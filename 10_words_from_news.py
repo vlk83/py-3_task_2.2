@@ -1,11 +1,4 @@
 # Занятие 2.2. Работа с кодировками, русскими буквами
-# https://github.com/vlk83/py-3_task_2.2
-
-# Написать программу, которая будет выводить топ 10 самых часто
-# встречающихся в новостях слов длиннее 6 символов для каждого файла.
-
-# Не забываем про декомпозицию и организацию кода в функции.
-# В решении домашнего задания вам могут помочь: split(), sort или sorted.
 
 import json
 
@@ -22,14 +15,14 @@ def top_words_from_africa():
         # создаем частотный словарь для всех слов длиннее 6 символов
         all_descriptions_word_dict = {}
         for word in all_descriptions_word_list:
-            if len(word)>6:
+            if len(word)>6 and word.isalpha():
                 if word in all_descriptions_word_dict:
                     value = all_descriptions_word_dict[word]
                     all_descriptions_word_dict[word] = value + 1
                 else:
                     all_descriptions_word_dict[word] = 1
 
-        print('-----------------------------------------------')
+        print('------------------------------------------------')
         print('топ 10 слов в файле newsafr.json и их частота:\n')
         
         # выводим топ 10 слов и их частоту
@@ -53,7 +46,7 @@ def top_words_from_cyprus():
         # создаем частотный словарь для всех слов длиннее 6 символов
         all_descriptions_word_dict = {}
         for word in all_descriptions_word_list:
-            if len(word)>6:
+            if len(word)>6 and word.isalpha():
                 if word in all_descriptions_word_dict:
                     value = all_descriptions_word_dict[word]
                     all_descriptions_word_dict[word] = value + 1
@@ -82,7 +75,7 @@ def top_words_from_italy():
         # создаем частотный словарь для всех слов длиннее 6 символов
         all_descriptions_word_dict = {}
         for word in all_descriptions_word_list:
-            if len(word)>6:
+            if len(word)>6 and word.isalpha():
                 if word in all_descriptions_word_dict:
                     value = all_descriptions_word_dict[word]
                     all_descriptions_word_dict[word] = value + 1
